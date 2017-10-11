@@ -20,6 +20,8 @@ toFrames pins = go 1 pins
 			| otherwise = Nothing
 		go _ _ = Nothing		
 
-
-
+frameToPoints :: Frame -> Int
+frameToPoints (Open x y) = x + y
+frameToPoints (Spare _ y) = 10 + y	
+frameToPoints (Strike x y) = 10 + x + y	
 
